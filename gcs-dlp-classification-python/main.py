@@ -17,7 +17,7 @@ Date:    October 2018
 
 """
 
-from google.cloud import dlp
+from google.cloud import dlp_v2
 from google.cloud import storage
 from google.cloud import pubsub
 from google.cloud import logging
@@ -50,7 +50,7 @@ APP_LOG_NAME = os.getenv('LOG_NAME', 'DLP-classify-gcs-files')
 # ----------------------------------
 
 # Initialize the Google Cloud client libraries
-dlp = dlp.DlpServiceClient()
+dlp = dlp_v2.DlpServiceClient()
 storage_client = storage.Client()
 publisher = pubsub.PublisherClient()
 subscriber = pubsub.SubscriberClient()
